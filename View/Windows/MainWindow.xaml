@@ -4,11 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RememberWPF"
+        xmlns:vm="clr-namespace:RememberWPF.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowVM/>
+    </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Настройки"></MenuItem>
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Выход"></MenuItem>
+            </MenuItem>
             <MenuItem Header="Помощь"></MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -16,7 +22,7 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Скример">
-                
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45" Text="{Binding Click}"/>
             </TabItem>
             <TabItem Header="Пароль"></TabItem>
         </TabControl>

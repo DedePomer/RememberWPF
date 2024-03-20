@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Infostruction\Commands\Base\" />
     <Folder Include="Model\" />
     <Folder Include="Data\" />
   </ItemGroup>
