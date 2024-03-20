@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:RememberWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Настройки"></MenuItem>
+            <MenuItem Header="Помощь"></MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock></TextBlock>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Скример">
+                
+            </TabItem>
+            <TabItem Header="Пароль"></TabItem>
+        </TabControl>
+        
+    </DockPanel>
 </Window>
