@@ -38,14 +38,5 @@ namespace RememberWPF.ViewModel
             #endregion
         }
 
-        //private int _Click;
-        //public int Click
-        //{  get { return _Click; }
-        //   set 
-        //   {
-        //       _Click = value;
-        //       OnPropertyChanged();
-        //   }
-        //}
     }
 }

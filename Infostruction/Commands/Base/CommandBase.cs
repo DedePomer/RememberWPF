@@ -9,7 +9,7 @@ namespace RememberWPF.Infostruction.Commands.Base
 {
     internal abstract class CommandBase: ICommand
     {
-        public event EventHandler CanExecuteChanged // Выполнятется если поменялось на ложь метод CanExecute
+        public event EventHandler? CanExecuteChanged // Выполнятется если поменялось на ложь метод CanExecute
         { 
             add => CommandManager.RequerySuggested += value;
             remove => CommandManager.RequerySuggested -= value;

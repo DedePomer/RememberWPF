@@ -15,14 +15,16 @@
             <MenuItem Header="Настройки">
                 <MenuItem Header="Выход"  Command="{Binding CloseAppCommand}"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Помощь"></MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="Прикл"></MenuItem>
+            </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock></TextBlock>
         </StatusBar>
         <TabControl>
             <TabItem Header="Скример">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45" Text="{Binding Click}"/>
+               
             </TabItem>
             <TabItem Header="Пароль"></TabItem>
         </TabControl>
