@@ -13,7 +13,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Настройки">
-                <MenuItem Header="Выход"  Command="{Binding CloseAppCommand}"></MenuItem>
+                <MenuItem Header="Выход" Command="{Binding CloseAppCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="Помощь">
                 <MenuItem Header="Прикл"></MenuItem>
@@ -24,10 +24,20 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Скример">
-               
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="41*" />
+                        <RowDefinition Height="142*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding ScreamNum}" FontSize="50" HorizontalAlignment="Center" Width="26"></TextBlock>
+                    <Button Grid.Row="1" Content="Прибавить" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
+                    <Image Source="RememberWPF\Data\Image\Screamer.png" Visibility="Visible"></Image>
+                    
+                </Grid>
             </TabItem>
             <TabItem Header="Пароль"></TabItem>
         </TabControl>
-        
+
     </DockPanel>
 </Window>
