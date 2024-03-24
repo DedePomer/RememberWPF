@@ -10,25 +10,25 @@ using System.Windows.Input;
 
 namespace RememberWPF.ViewModel
 {
+
+
     internal class MainWindowVM : ViewModelBase
     {
-        #region Число в Скримере
-        private int _ScreamNum = 0;           
+        private Visibility _visibilityImg = Visibility.Collapsed; // Видимость картинки
+        public Visibility VisibilityImg
+        {
+            get { return _visibilityImg; }
+            set => Set(ref _visibilityImg, value);
+        }
+        private int _screamNum = 0;  // Счётчик         
         public int ScreamNum
         { 
-            get { return _ScreamNum; }
-            set 
-            {
-                if (Equals(_ScreamNum, value)) return;
-                _ScreamNum = value;
-                OnPropertyChanged();
-            }
+            get { return _screamNum; }
+            set => Set(ref _screamNum, value);
         }
-        #endregion
 
 
 
-        #region Команды
 
         #region CloseAppCommand
         public ICommand CloseAppCommand { get; }
@@ -43,21 +43,27 @@ namespace RememberWPF.ViewModel
         private bool CanClickScreamCommandExecute(object p) => true;
         private void OnClickScreamCommandExecuted(object p)
         {
-            if (ScreamNum<11) ScreamNum += 1;
+            if (ScreamNum < 11) ScreamNum += 1;
+            else
+            {
+                ScreamNum = 0;
+                VisibilityImg = Visibility.Visible;
+                //TimerCallback tc = new TimerCallback
+                //Timer timer = new Timer()
+            }
         }
         #endregion
 
 
 
-        #endregion
+
 
 
         public MainWindowVM()
         {
-            #region Комманды
+
             CloseAppCommand = new RelateC(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
 
-            #endregion
         }
 
     }

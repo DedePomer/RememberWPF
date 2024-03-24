@@ -31,8 +31,8 @@
                         <RowDefinition Height="142*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="{Binding ScreamNum}" FontSize="50" HorizontalAlignment="Center" Width="26"></TextBlock>
-                    <Button Grid.Row="1" Content="Прибавить" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
-                    <Image Visibility="Visible" Source="/View/Windows/Screamer.png"/>
+                    <Button Command="{Binding ClickScreamCommand}" Grid.Row="1" Content="Прибавить" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
+                    <Image Visibility="{Binding VisibilityImg}" Source="/View/Windows/Screamer.png"/>
 
                 </Grid>
             </TabItem>
