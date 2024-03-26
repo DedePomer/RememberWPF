@@ -43,28 +43,28 @@ namespace RememberWPF.ViewModel
         private bool CanClickScreamCommandExecute(object p) => true;
         private void OnClickScreamCommandExecuted(object p)
         {
-            if (ScreamNum < 11) ScreamNum += 1;
+            if (ScreamNum < 10)
+            { 
+                ScreamNum += 1;
+                VisibilityImg = Visibility.Collapsed;
+            }
             else
             {
-                ScreamNum = 0;
                 VisibilityImg = Visibility.Visible;
-                //TimerCallback tc = new TimerCallback
-                //Timer timer = new Timer()
-            }
+                ScreamNum = -1;                     
+            }       
         }
         #endregion
-
-
-
-
-
 
         public MainWindowVM()
         {
 
             CloseAppCommand = new RelateC(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
-
+            ClickScreamCommand = new RelateC(OnClickScreamCommandExecuted, CanClickScreamCommandExecute);
         }
+
+
+
 
     }
 }
